@@ -1,5 +1,5 @@
 {
-  "name": "@org/async",
+  "name": "@base-ripple/react",
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/index.js",
@@ -8,7 +8,7 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "@org/source": "./src/index.ts",
+      "@base-ripple/source": "./src/index.ts",
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
@@ -23,7 +23,7 @@
   },
   "nx": {
     "tags": [
-      "scope:async"
+      "scope:react"
     ]
   }
 }

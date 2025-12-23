@@ -2,14 +2,10 @@ import { defineConfig } from 'vite';
 
 export default defineConfig(() => ({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/packages/strings',
+  cacheDir: '../../node_modules/.vite/packages/react',
   plugins: [],
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
   test: {
-    name: '@org/strings',
+    name: '@base-ripple/react',
     watch: false,
     globals: true,
     environment: 'node',

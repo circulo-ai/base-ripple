@@ -2,14 +2,14 @@ import { defineConfig } from 'vite';
 
 export default defineConfig(() => ({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/packages/async',
+  cacheDir: '../../node_modules/.vite/packages/core',
   plugins: [],
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [ nxViteTsPaths() ],
   // },
   test: {
-    name: '@org/async',
+    name: '@base-ripple/core',
     watch: false,
     globals: true,
     environment: 'node',

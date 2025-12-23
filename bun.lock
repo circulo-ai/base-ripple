@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "@org/source",
+      "name": "@base-ripple/source",
       "devDependencies": {
         "@eslint/js": "^9.8.0",
         "@nx/eslint": "22.3.1",
@@ -31,33 +31,15 @@
         "vitest": "4.0.9",
       },
     },
-    "packages/async": {
-      "name": "@org/async",
+    "packages/core": {
+      "name": "@base-ripple/core",
       "version": "0.0.1",
       "dependencies": {
         "tslib": "^2.3.0",
       },
     },
-    "packages/colors": {
-      "name": "@org/colors",
-      "version": "0.0.1",
-      "dependencies": {
-        "tslib": "^2.3.0",
-      },
-    },
-    "packages/strings": {
-      "name": "@org/strings",
-      "version": "0.0.1",
-      "dependencies": {
-        "tslib": "^2.3.0",
-      },
-      "devDependencies": {
-        "@org/utils": "workspace:*",
-        "vite": "^7.0.0",
-      },
-    },
-    "packages/utils": {
-      "name": "@org/utils",
+    "packages/react": {
+      "name": "@base-ripple/react",
       "version": "0.0.1",
       "dependencies": {
         "tslib": "^2.3.0",
@@ -259,6 +241,10 @@
 
     "@babel/types": ["@babel/types@7.28.5", "", { "dependencies": { "@babel/helper-string-parser": "^7.27.1", "@babel/helper-validator-identifier": "^7.28.5" } }, "sha512-qQ5m48eI/MFLQ5PxQj4PFaprjyCTLI37ElWMmNs0K8Lk3dVeOdNpB3ks8jc7yM5CDmVC73eMVk/trk3fgmrUpA=="],
 
+    "@base-ripple/core": ["@base-ripple/core@workspace:packages/core"],
+
+    "@base-ripple/react": ["@base-ripple/react@workspace:packages/react"],
+
     "@bcoe/v8-coverage": ["@bcoe/v8-coverage@1.0.2", "", {}, "sha512-6zABk/ECA/QYSCQ1NGiVwwbQerUCZ+TQbp64Q3AgmfNvurHH0j8TtXa1qbShXA6qqkpAj4V5W8pP6mLe1mcMqA=="],
 
     "@cypress/request": ["@cypress/request@3.0.9", "", { "dependencies": { "aws-sign2": "~0.7.0", "aws4": "^1.8.0", "caseless": "~0.12.0", "combined-stream": "~1.0.6", "extend": "~3.0.2", "forever-agent": "~0.6.1", "form-data": "~4.0.4", "http-signature": "~1.4.0", "is-typedarray": "~1.0.0", "isstream": "~0.1.2", "json-stringify-safe": "~5.0.1", "mime-types": "~2.1.19", "performance-now": "^2.1.0", "qs": "6.14.0", "safe-buffer": "^5.1.2", "tough-cookie": "^5.0.0", "tunnel-agent": "^0.6.0", "uuid": "^8.3.2" } }, "sha512-I3l7FdGRXluAS44/0NguwWlO83J18p0vlr2FYHrJkWdNYhgVoiYo61IXPqaOsL+vNxU1ZqMACzItGK3/KKDsdw=="],
@@ -394,14 +380,6 @@
     "@nx/web": ["@nx/web@22.3.1", "", { "dependencies": { "@nx/devkit": "22.3.1", "@nx/js": "22.3.1", "detect-port": "^1.5.1", "http-server": "^14.1.0", "picocolors": "^1.1.0", "tslib": "^2.3.0" } }, "sha512-UoqGbNtyh47fmJDuvMwcneeRzfLyZVFdbALWgJIMm1jCl6RktRCeJ0fyT9JgjwKplFmRXpdpgoTIVnVoSVFaIg=="],
 
     "@nx/workspace": ["@nx/workspace@22.3.1", "", { "dependencies": { "@nx/devkit": "22.3.1", "@zkochan/js-yaml": "0.0.7", "chalk": "^4.1.0", "enquirer": "~2.3.6", "nx": "22.3.1", "picomatch": "4.0.2", "semver": "^7.6.3", "tslib": "^2.3.0", "yargs-parser": "21.1.1" } }, "sha512-gR6P4mGfMQvayzOfmMuO41pMMOgIALZyU/O/34gsaUvLuU0DpH3DFYUVT075s9ox7aDVA0rYxN8pWjfbdaofqw=="],
-
-    "@org/async": ["@org/async@workspace:packages/async"],
-
-    "@org/colors": ["@org/colors@workspace:packages/colors"],
-
-    "@org/strings": ["@org/strings@workspace:packages/strings"],
-
-    "@org/utils": ["@org/utils@workspace:packages/utils"],
 
     "@phenomnomnominal/tsquery": ["@phenomnomnominal/tsquery@5.0.1", "", { "dependencies": { "esquery": "^1.4.0" }, "peerDependencies": { "typescript": "^3 || ^4 || ^5" } }, "sha512-3nVv+e2FQwsW8Aw6qTU6f+1rfcJ3hrcnvH/mu9i8YhxO+9sqbOfpL8m6PbET5+xKOlz/VSbp0RoYWYCtIsnmuA=="],
 
@@ -1594,8 +1572,6 @@
     "cacheable-request/get-stream": ["get-stream@5.2.0", "", { "dependencies": { "pump": "^3.0.0" } }, "sha512-nBF+F1rAZVCu/p7rjzgA+Yb4lfYXrpl7a6VmJrU8wF9I1CKvP/QwPNZHnOlwbTkY6dvtFIzFMSyQXbLoTQPRpA=="],
 
     "clone-response/mimic-response": ["mimic-response@1.0.1", "", {}, "sha512-j5EctnkH7amfV/q5Hgmoal1g2QHFJRraOtmx0JpIqkxhBhI/lJSl1nMpQ45hVarwNETOoWEimndZ4QK0RHxuxQ=="],
-
-    "compressible/mime-db": ["mime-db@1.54.0", "", {}, "sha512-aU5EJuIN2WDemCcAp2vFBfp/m4EAhWJnUNSSw0ixs7/kXbd6Pg64EmwJkNdFhB8aWt1sH2CTXrLxo/iAGV3oPQ=="],
 
     "compression/debug": ["debug@2.6.9", "", { "dependencies": { "ms": "2.0.0" } }, "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA=="],
 

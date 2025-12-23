@@ -1,5 +1,5 @@
 {
-  "name": "@org/strings",
+  "name": "@base-ripple/core",
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/index.js",
@@ -8,7 +8,7 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "@org/source": "./src/index.ts",
+      "@base-ripple/source": "./src/index.ts",
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
@@ -21,24 +21,9 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "devDependencies": {
-    "vite": "^7.0.0",
-    "@org/utils": "workspace:*"
-  },
   "nx": {
     "tags": [
-      "scope:strings"
-    ],
-    "targets": {
-      "build-base": {
-        "command": "echo 'Running build-base for strings. This can be replaced with arbitrary commands.'",
-        "cache": true
-      },
-      "build": {
-        "dependsOn": [
-          "build-base"
-        ]
-      }
-    }
+      "scope:core"
+    ]
   }
 }

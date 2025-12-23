@@ -26,16 +26,16 @@ export default [
               onlyDependOnLibsWithTags: ['scope:shared'],
             },
             {
-              sourceTag: 'scope:async',
-              onlyDependOnLibsWithTags: ['scope:shared', 'scope:async'],
+              sourceTag: 'scope:core',
+              onlyDependOnLibsWithTags: ['scope:shared', 'scope:core'],
             },
             {
-              sourceTag: 'scope:colors',
-              onlyDependOnLibsWithTags: ['scope:shared', 'scope:colors'],
-            },
-            {
-              sourceTag: 'scope:strings',
-              onlyDependOnLibsWithTags: ['scope:shared', 'scope:strings'],
+              sourceTag: 'scope:react',
+              onlyDependOnLibsWithTags: [
+                'scope:shared',
+                'scope:react',
+                'scope:core',
+              ],
             },
           ],
         },
