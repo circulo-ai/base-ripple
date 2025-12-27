@@ -33,8 +33,8 @@ export default [
               sourceTag: 'scope:react',
               onlyDependOnLibsWithTags: [
                 'scope:shared',
-                'scope:react',
                 'scope:core',
+                'scope:react',
               ],
             },
           ],
@@ -51,7 +51,8 @@ export default [
       '**/*.cjs',
       '**/*.mjs',
     ],
-    // Override or add rules here
-    rules: {},
+    rules: {
+      '@typescript-eslint/no-empty-function': 'off',
+    },
   },
 ];

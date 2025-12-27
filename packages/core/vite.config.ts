@@ -1,13 +1,10 @@
 import { defineConfig } from 'vite';
+import { resolve } from 'node:path';
 
 export default defineConfig(() => ({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/packages/core',
   plugins: [],
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
   test: {
     name: '@base-ripple/core',
     watch: false,
@@ -19,5 +16,20 @@ export default defineConfig(() => ({
       reportsDirectory: './test-output/vitest/coverage',
       provider: 'v8' as const,
     },
+  },
+  build: {
+    lib: {
+      entry: resolve(__dirname, 'src/index.ts'),
+      formats: ['es' as const],
+      fileName: 'index',
+    },
+    rollupOptions: {
+      input: {
+        index: resolve(__dirname, 'src/index.ts'),
+        styles: resolve(__dirname, 'src/styles.css'),
+      },
+    },
+    cssCodeSplit: true,
+    cssMinify: 'lightningcss' as const,
   },
 }));
