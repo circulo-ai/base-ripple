@@ -1,5 +1,11 @@
 // region TYPES
 
+export type AttachBaseRippleOptions = {
+  origin?: 'pointer' | 'center';
+  sizeOffset?: number;
+  attributes?: Record<string, string>;
+};
+
 type RippleKeyframes = {
   from: {
     size: number;
@@ -79,11 +85,7 @@ export function attachBaseRipple(
     origin = 'pointer',
     sizeOffset = 0,
     attributes,
-  }: {
-    origin?: 'pointer' | 'center';
-    sizeOffset?: number;
-    attributes?: Record<string, string>;
-  } = {}
+  }: AttachBaseRippleOptions = {}
 ): Dispose {
   const ripples = new Set<HTMLSpanElement>();
   const activePointerRipples = new Map<number, HTMLSpanElement>();
