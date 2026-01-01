@@ -1,40 +1,40 @@
-import nx from '@nx/eslint-plugin';
+import nx from "@nx/eslint-plugin";
 
 export default [
-  ...nx.configs['flat/base'],
-  ...nx.configs['flat/typescript'],
-  ...nx.configs['flat/javascript'],
+  ...nx.configs["flat/base"],
+  ...nx.configs["flat/typescript"],
+  ...nx.configs["flat/javascript"],
   {
     ignores: [
-      '**/dist',
-      '**/build',
-      '**/vite.config.*.timestamp*',
-      '**/vitest.config.*.timestamp*',
+      "**/dist",
+      "**/build",
+      "**/vite.config.*.timestamp*",
+      "**/vitest.config.*.timestamp*",
     ],
   },
   {
-    files: ['**/*.ts', '**/*.js'],
+    files: ["**/*.ts", "**/*.js"],
     rules: {
-      '@nx/enforce-module-boundaries': [
-        'error',
+      "@nx/enforce-module-boundaries": [
+        "error",
         {
           enforceBuildableLibDependency: true,
-          allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$'],
+          allow: ["^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$"],
           depConstraints: [
             {
-              sourceTag: 'scope:shared',
-              onlyDependOnLibsWithTags: ['scope:shared'],
+              sourceTag: "scope:shared",
+              onlyDependOnLibsWithTags: ["scope:shared"],
             },
             {
-              sourceTag: 'scope:core',
-              onlyDependOnLibsWithTags: ['scope:shared', 'scope:core'],
+              sourceTag: "scope:core",
+              onlyDependOnLibsWithTags: ["scope:shared", "scope:core"],
             },
             {
-              sourceTag: 'scope:react',
+              sourceTag: "scope:react",
               onlyDependOnLibsWithTags: [
-                'scope:shared',
-                'scope:core',
-                'scope:react',
+                "scope:shared",
+                "scope:core",
+                "scope:react",
               ],
             },
           ],
@@ -44,15 +44,15 @@ export default [
   },
   {
     files: [
-      '**/*.ts',
-      '**/*.cts',
-      '**/*.mts',
-      '**/*.js',
-      '**/*.cjs',
-      '**/*.mjs',
+      "**/*.ts",
+      "**/*.cts",
+      "**/*.mts",
+      "**/*.js",
+      "**/*.cjs",
+      "**/*.mjs",
     ],
     rules: {
-      '@typescript-eslint/no-empty-function': 'off',
+      "@typescript-eslint/no-empty-function": "off",
     },
   },
 ];

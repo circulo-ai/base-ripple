@@ -1,5 +1,5 @@
-@import '@base-ripple/core/styles.css';
+@import "@base-ripple/core/styles.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@source '../../../libs';
+@source "../../../libs";

@@ -19,10 +19,10 @@ managers.
 ## Quick start (React)
 
 ```tsx
-'use client';
+"use client";
 
-import '@base-ripple/core/styles.css';
-import { BaseRipple } from '@base-ripple/react';
+import "@base-ripple/core/styles.css";
+import { BaseRipple } from "@base-ripple/react";
 
 export function Example() {
   return <BaseRipple className="base-ripple-container">Click me</BaseRipple>;
@@ -48,7 +48,7 @@ The ripple uses two class names:
 Option A: Import the core default styles (recommended)
 
 ```css
-@import '@base-ripple/core/styles.css';
+@import "@base-ripple/core/styles.css";
 ```
 
 Option B: Provide your own styles (advanced)
@@ -110,13 +110,13 @@ transition, set a `transition` with 0 duration, for example:
 ## API
 
 ```tsx
-import type { AttachBaseRippleOptions } from '@base-ripple/core';
-import { BaseRipple } from '@base-ripple/react';
+import type { AttachBaseRippleOptions } from "@base-ripple/core";
+import { BaseRipple } from "@base-ripple/react";
 
 <BaseRipple
   as="button"
   className="base-ripple-container"
-  rippleOptions={{ origin: 'pointer', sizeOffset: 96 }}
+  rippleOptions={{ origin: "pointer", sizeOffset: 96 }}
 >
   Click me
 </BaseRipple>;
@@ -136,7 +136,7 @@ forwarded to the rendered element.
 
 | Prop         | Type                     | Default     | Description                                                                                            |
 | ------------ | ------------------------ | ----------- | ------------------------------------------------------------------------------------------------------ |
-| `origin`     | `'pointer' \| 'center'`  | `pointer`   | Where the ripple starts. `pointer` uses the pointer position; `center` starts from the element center. |
+| `origin`     | `"pointer" \| "center"`  | `pointer`   | Where the ripple starts. `pointer` uses the pointer position; `center` starts from the element center. |
 | `sizeOffset` | `number`                 | `0`         | Extra pixels added to the ripple diameter, useful when adding blur or glow.                            |
 | `attributes` | `Record<string, string>` | `undefined` | Extra attributes added to each ripple `<span>`.                                                        |
 

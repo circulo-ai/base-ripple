@@ -1,10 +1,10 @@
-import { ReactNode } from 'react';
-import './global.css';
+import { ReactNode } from "react";
+import "./global.css";
 
 export const metadata = {
-  title: 'Base Ripple',
+  title: "Base Ripple",
   description:
-    'Framework-agnostic, customizable, high-performance ripple interaction.',
+    "Framework-agnostic, customizable, high-performance ripple interaction.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

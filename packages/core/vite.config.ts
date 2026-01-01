@@ -1,35 +1,35 @@
-import { resolve } from 'node:path';
-import { defineConfig } from 'vite';
+import { resolve } from "node:path";
+import { defineConfig } from "vite";
 
 export default defineConfig(() => ({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/packages/core',
+  cacheDir: "../../node_modules/.vite/packages/core",
   plugins: [],
   test: {
-    name: '@base-ripple/core',
+    name: "@base-ripple/core",
     watch: false,
     globals: true,
-    environment: 'node',
-    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    reporters: ['default'],
+    environment: "node",
+    include: ["src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    reporters: ["default"],
     coverage: {
-      reportsDirectory: './test-output/vitest/coverage',
-      provider: 'v8' as const,
+      reportsDirectory: "./test-output/vitest/coverage",
+      provider: "v8" as const,
     },
   },
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      formats: ['es' as const],
-      fileName: 'index',
+      entry: resolve(__dirname, "src/index.ts"),
+      formats: ["es" as const],
+      fileName: "index",
     },
     rollupOptions: {
       input: {
-        index: resolve(__dirname, 'src/index.ts'),
-        styles: resolve(__dirname, 'src/styles.css'),
+        index: resolve(__dirname, "src/index.ts"),
+        styles: resolve(__dirname, "src/styles.css"),
       },
     },
     cssCodeSplit: true,
-    cssMinify: 'lightningcss' as const,
+    cssMinify: "lightningcss" as const,
   },
 }));

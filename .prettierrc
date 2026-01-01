@@ -3,6 +3,5 @@
     "prettier-plugin-organize-imports",
     "prettier-plugin-tailwindcss"
   ],
-  "tailwindFunctions": ["cn", "cva"],
-  "singleQuote": true
+  "tailwindFunctions": ["cn", "cva"]
 }

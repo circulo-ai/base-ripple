@@ -1,16 +1,18 @@
-import { BaseRipple } from '@base-ripple/react';
-import { ComponentProps } from 'react';
+import { BaseRipple } from "@base-ripple/react";
+import { ComponentProps } from "react";
 
 export default function Home() {
   return (
     <main className="grid min-h-dvh grid-cols-2 grid-rows-7 gap-1 p-1 sm:grid-cols-4 sm:grid-rows-4">
-      <article className="col-span-full flex flex-col items-center justify-evenly gap-4 p-3 text-center">
-        <h1 className="text-balance text-xl font-medium">Base Ripple Demo</h1>
-        <p className="text-balance text-lg text-black/50">
+      <article className="col-span-full flex flex-col items-center justify-evenly gap-4 p-3">
+        <h1 className="text-balance text-center text-xl font-medium">
+          Base Ripple Demo
+        </h1>
+        <p className="text-balance text-center text-lg text-black/50">
           Framework-agnostic, customizable, high-performance ripple interaction.
         </p>
         <a
-          className="text-balance text-blue-500 underline"
+          className="text-balance text-center text-blue-500 underline"
           href="https://github.com/circulo-ai/base-ripple"
           target="_blank"
         >
@@ -24,7 +26,7 @@ export default function Home() {
       <BaseRippleExample
         title="Center Offset"
         description="Center origin with a negative size offset for a tighter ring."
-        rippleOptions={{ origin: 'center', sizeOffset: -64 }}
+        rippleOptions={{ origin: "center", sizeOffset: -64 }}
       />
       <BaseRippleExample
         title="Soft Blur"
@@ -36,7 +38,7 @@ export default function Home() {
         title="Center Blur"
         description="Center origin with a blurred ripple that expands smoothly."
         className="[&>.base-ripple]:bg-white/15 [&>.base-ripple]:blur-3xl"
-        rippleOptions={{ origin: 'center' }}
+        rippleOptions={{ origin: "center" }}
       />
       <BaseRippleExample
         title="Huge Offset"
@@ -47,7 +49,7 @@ export default function Home() {
         title="Slow Trail"
         description="Longer duration and custom data attributes on each span."
         className="[&>.base-ripple]:[animation-duration:2s] [&>.base-ripple]:[transition-duration:2s]"
-        rippleOptions={{ attributes: { 'data-custom': 'base-ripple' } }}
+        rippleOptions={{ attributes: { "data-custom": "base-ripple" } }}
       />
       <BaseRippleExample
         title="Sharp Timing"
@@ -101,14 +103,18 @@ function BaseRippleExample({
   return (
     <BaseRipple
       className={
-        'base-ripple-container flex flex-col items-center justify-center bg-black p-4 text-center text-white [&>.base-ripple]:bg-white/10 ' +
+        "base-ripple-container flex flex-col items-center justify-center bg-black p-3 text-white [&>.base-ripple]:bg-white/10 " +
         className
       }
       {...restProps}
     >
-      {title && <h2 className="text-balance text-lg font-medium">{title}</h2>}
+      {title && (
+        <h2 className="text-balance text-center text-lg font-medium">
+          {title}
+        </h2>
+      )}
       {description && (
-        <p className="text-balance text-white/50">{description}</p>
+        <p className="text-balance text-center text-white/50">{description}</p>
       )}
       {children}
     </BaseRipple>

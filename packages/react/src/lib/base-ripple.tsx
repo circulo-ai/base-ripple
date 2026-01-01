@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { attachBaseRipple, AttachBaseRippleOptions } from '@base-ripple/core';
+import { attachBaseRipple, AttachBaseRippleOptions } from "@base-ripple/core";
 import {
   ComponentPropsWithoutRef,
   ComponentPropsWithRef,
@@ -13,7 +13,7 @@ import {
   useCallback,
   useEffect,
   useRef,
-} from 'react';
+} from "react";
 
 // region TYPES
 
@@ -26,13 +26,13 @@ type PolymorphicComponentProps<E extends ElementType, P> = P &
   Omit<ComponentPropsWithoutRef<E>, PolymorphicOmit<E, P>>;
 
 type PolymorphicComponentRef<E extends ElementType> =
-  ComponentPropsWithRef<E>['ref'];
+  ComponentPropsWithRef<E>["ref"];
 
 type RippleProps = {
   rippleOptions?: AttachBaseRippleOptions;
 };
 
-type RippleComponent = <E extends ElementType = 'button'>(
+type RippleComponent = <E extends ElementType = "button">(
   props: PolymorphicComponentProps<E, RippleProps> & {
     ref?: PolymorphicComponentRef<E>;
   },
@@ -46,7 +46,7 @@ const DEFAULT_RIPPLE_OPTIONS: AttachBaseRippleOptions = {};
 function Ripple(
   {
     rippleOptions = DEFAULT_RIPPLE_OPTIONS,
-    as: Component = 'button',
+    as: Component = "button",
     ...restProps
   }: PolymorphicComponentProps<ElementType, RippleProps>,
   ref: ForwardedRef<unknown>,
@@ -72,7 +72,7 @@ type PossibleRef<T> = Ref<T> | undefined;
 function setRef<T>(ref: PossibleRef<T>, value: T | null) {
   if (!ref) return;
 
-  if (typeof ref === 'function') {
+  if (typeof ref === "function") {
     ref(value);
     return;
   }
@@ -100,7 +100,7 @@ function useMergedRefs<T>(...refs: PossibleRef<T>[]) {
 // region OTHER UTILITIES
 
 function serializeOptions(options: AttachBaseRippleOptions | undefined) {
-  if (!options) return '';
+  if (!options) return "";
 
   const attributes = options.attributes;
   const serializedAttributes = attributes
@@ -110,11 +110,11 @@ function serializeOptions(options: AttachBaseRippleOptions | undefined) {
           (key) =>
             `${encodeURIComponent(key)}:${encodeURIComponent(attributes[key])}`,
         )
-        .join('|')
-    : '';
+        .join("|")
+    : "";
 
-  return `${options.origin ?? ''}__${
-    options.sizeOffset ?? ''
+  return `${options.origin ?? ""}__${
+    options.sizeOffset ?? ""
   }__${serializedAttributes}`;
 }
 

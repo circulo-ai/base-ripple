@@ -1,1 +1,1 @@
-export * from './lib/base-ripple.js';
+export * from "./lib/base-ripple.js";

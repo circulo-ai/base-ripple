@@ -19,18 +19,18 @@ npm i @base-ripple/core
 ```
 
 ```ts
-import '@base-ripple/core/styles.css';
-import { attachBaseRipple } from '@base-ripple/core';
+import "@base-ripple/core/styles.css";
+import { attachBaseRipple } from "@base-ripple/core";
 
 const button = document.querySelector<HTMLButtonElement>(
-  '.base-ripple-container',
+  ".base-ripple-container",
 );
-if (!button) throw new Error('Missing button');
+if (!button) throw new Error("Missing button");
 
 const dispose = attachBaseRipple(button, {
-  origin: 'pointer',
+  origin: "pointer",
   sizeOffset: 96,
-  attributes: { 'data-ripple': 'true' },
+  attributes: { "data-ripple": "true" },
 });
 
 // later
@@ -50,7 +50,7 @@ The ripple uses two class names:
 Option A: Import the default styles (recommended)
 
 ```css
-@import '@base-ripple/core/styles.css';
+@import "@base-ripple/core/styles.css";
 ```
 
 The default stylesheet handles layout and animation. You still need to set a
@@ -122,7 +122,7 @@ transition, set a `transition` with 0 duration, for example:
 ## API
 
 ```ts
-import type { AttachBaseRippleOptions } from '@base-ripple/core';
+import type { AttachBaseRippleOptions } from "@base-ripple/core";
 
 attachBaseRipple(
   container: HTMLElement,
@@ -134,7 +134,7 @@ attachBaseRipple(
 
 | Prop         | Type                     | Default     | Description                                                                                            |
 | ------------ | ------------------------ | ----------- | ------------------------------------------------------------------------------------------------------ |
-| `origin`     | `'pointer' \| 'center'`  | `pointer`   | Where the ripple starts. `pointer` uses the pointer position; `center` starts from the element center. |
+| `origin`     | `"pointer" \| "center"`  | `pointer`   | Where the ripple starts. `pointer` uses the pointer position; `center` starts from the element center. |
 | `sizeOffset` | `number`                 | `0`         | Extra pixels added to the ripple diameter, useful when adding blur or glow.                            |
 | `attributes` | `Record<string, string>` | `undefined` | Extra attributes added to each ripple `<span>`.                                                        |
 
