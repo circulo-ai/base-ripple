@@ -6,11 +6,16 @@
     "outDir": "dist",
     "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
     "emitDeclarationOnly": false,
+    "jsx": "react-jsx",
     "forceConsistentCasingInFileNames": true,
-    "types": ["node"]
+    "types": ["node", "react", "react-dom"]
   },
-  "include": ["src/**/*.ts"],
-  "references": [],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "references": [
+    {
+      "path": "../core/tsconfig.lib.json"
+    }
+  ],
   "exclude": [
     "vite.config.ts",
     "vite.config.mts",

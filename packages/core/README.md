@@ -23,7 +23,7 @@ import '@base-ripple/core/styles.css';
 import { attachBaseRipple } from '@base-ripple/core';
 
 const button = document.querySelector<HTMLButtonElement>(
-  '.base-ripple-container'
+  '.base-ripple-container',
 );
 if (!button) throw new Error('Missing button');
 
@@ -94,14 +94,16 @@ default `styles.css` you can copy and customize:
         calc(var(--base-ripple-keyframes-from-x) - 50%),
         calc(var(--base-ripple-keyframes-from-y) - 50%),
         0
-      ) scale(0);
+      )
+      scale(0);
   }
   to {
     transform: translate3d(
         calc(var(--base-ripple-keyframes-to-x) - 50%),
         calc(var(--base-ripple-keyframes-to-y) - 50%),
         0
-      ) scale(1);
+      )
+      scale(1);
   }
 }
 ```

@@ -19,7 +19,11 @@
     "!**/*.tsbuildinfo"
   ],
   "dependencies": {
+    "@base-ripple/core": "0.0.1",
     "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8 <20"
   },
   "nx": {
     "tags": [

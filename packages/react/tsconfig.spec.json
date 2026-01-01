@@ -2,12 +2,15 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/vitest",
+    "jsx": "react-jsx",
     "types": [
       "vitest/globals",
       "vitest/importMeta",
       "vite/client",
       "node",
-      "vitest"
+      "vitest",
+      "react",
+      "react-dom"
     ],
     "forceConsistentCasingInFileNames": true
   },

@@ -85,7 +85,7 @@ export function attachBaseRipple(
     origin = 'pointer',
     sizeOffset = 0,
     attributes,
-  }: AttachBaseRippleOptions = {}
+  }: AttachBaseRippleOptions = {},
 ): Dispose {
   const ripples = new Set<HTMLSpanElement>();
   const activePointerRipples = new Map<number, HTMLSpanElement>();
@@ -97,7 +97,7 @@ export function attachBaseRipple(
   const createRippleKeyframes = (
     containerRect: DOMRect,
     fromX: number,
-    fromY: number
+    fromY: number,
   ): RippleKeyframes => ({
     from: {
       size: 0,
@@ -111,11 +111,11 @@ export function attachBaseRipple(
               containerRect.width,
               containerRect.height,
               fromX,
-              fromY
+              fromY,
             )
           : rectBoundingCircleDiameter(
               containerRect.width,
-              containerRect.height
+              containerRect.height,
             )) + sizeOffset,
       x: isPointerOrigin ? fromX : containerRect.width / 2,
       y: isPointerOrigin ? fromY : containerRect.height / 2,
@@ -131,7 +131,7 @@ export function attachBaseRipple(
     const rippleKeyframes = createRippleKeyframes(
       containerRect,
       event.clientX - containerRect.x,
-      event.clientY - containerRect.y
+      event.clientY - containerRect.y,
     );
 
     const ripple = createRipple({
@@ -159,7 +159,7 @@ export function attachBaseRipple(
     const rippleKeyframes = createRippleKeyframes(
       containerRect,
       containerRect.width / 2,
-      containerRect.height / 2
+      containerRect.height / 2,
     );
 
     const ripple = createRipple({
@@ -294,7 +294,7 @@ function prefersReducedMotion() {
 }
 
 function observeReducedMotion(
-  onChange: (nextReducedMotion: boolean) => void
+  onChange: (nextReducedMotion: boolean) => void,
 ): Dispose {
   if (typeof matchMedia !== 'function') return () => {};
 
@@ -333,19 +333,19 @@ function createRipple({
   ripple.style.height = rippleKeyframes.to.size + 'px';
   ripple.style.setProperty(
     '--base-ripple-keyframes-from-x',
-    rippleKeyframes.from.x + 'px'
+    rippleKeyframes.from.x + 'px',
   );
   ripple.style.setProperty(
     '--base-ripple-keyframes-from-y',
-    rippleKeyframes.from.y + 'px'
+    rippleKeyframes.from.y + 'px',
   );
   ripple.style.setProperty(
     '--base-ripple-keyframes-to-x',
-    rippleKeyframes.to.x + 'px'
+    rippleKeyframes.to.x + 'px',
   );
   ripple.style.setProperty(
     '--base-ripple-keyframes-to-y',
-    rippleKeyframes.to.y + 'px'
+    rippleKeyframes.to.y + 'px',
   );
 
   if (attributes)
@@ -404,7 +404,7 @@ function rectBoundingCircleDiameterFromPoint(
   width: number,
   height: number,
   x: number,
-  y: number
+  y: number,
 ) {
   const dx = Math.max(x, width - x);
   const dy = Math.max(y, height - y);
