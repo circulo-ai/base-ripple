@@ -37,7 +37,7 @@ export default function Home() {
       <BaseRippleExample
         title="Center Blur"
         description="Center origin with a blurred ripple that expands smoothly."
-        className="[&_>_.base-ripple]:bg-white/15 [&_>_.base-ripple]:blur-3xl"
+        className="[&_>_.base-ripple]:blur-3xl"
         rippleOptions={{ origin: "center" }}
       />
       <BaseRippleExample
@@ -77,7 +77,7 @@ export default function Home() {
       <BaseRippleExample
         title="Light Mode"
         description="Light surface with darker ripple for a softer contrast."
-        className="bg-gray-500 [&_>_.base-ripple]:bg-black/10"
+        className="bg-gray-500 [&_>_.base-ripple]:bg-black/15"
       />
       <BaseRippleExample
         title="View Source"
@@ -103,7 +103,7 @@ function BaseRippleExample({
   return (
     <BaseRipple
       className={
-        "base-ripple-container flex flex-col items-center justify-center bg-black p-3 text-white [&_>_.base-ripple]:bg-white/10 " +
+        "base-ripple-container flex flex-col items-center justify-center bg-black p-3 text-white [&_>_.base-ripple]:bg-white/15 " +
         className
       }
       {...restProps}

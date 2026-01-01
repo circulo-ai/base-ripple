@@ -32,4 +32,5 @@ export default defineConfig(() => ({
     cssCodeSplit: true,
     cssMinify: "lightningcss" as const,
   },
+  passWithNoTests: true,
 }));

@@ -54,7 +54,10 @@
     "projects": ["!@base-ripple/source"],
     "version": { "preVersionCommand": "npx nx run-many -t build" }
   },
-  "targetDefaults": { "test": { "dependsOn": ["^build"] } },
+  "targetDefaults": {
+    "build": { "dependsOn": ["^build"] },
+    "test": { "dependsOn": ["^build"] }
+  },
   "generators": {
     "@nx/next": { "application": { "style": "tailwind", "linter": "eslint" } }
   },
