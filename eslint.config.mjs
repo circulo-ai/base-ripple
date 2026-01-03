@@ -55,4 +55,10 @@ export default [
       "@typescript-eslint/no-empty-function": "off",
     },
   },
+  {
+    files: ["**/vite.config.*", "**/vitest.config.*"],
+    rules: {
+      "@nx/enforce-module-boundaries": "off",
+    },
+  },
 ];

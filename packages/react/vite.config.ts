@@ -1,9 +1,17 @@
+import { resolve } from "node:path";
 import { defineConfig } from "vite";
+import dts from "vite-plugin-dts";
 
 export default defineConfig(() => ({
   root: __dirname,
   cacheDir: "../../node_modules/.vite/packages/react",
-  plugins: [],
+  plugins: [
+    dts({
+      entryRoot: "src",
+      tsconfigPath: resolve(__dirname, "tsconfig.lib.json"),
+      outDir: "dist",
+    }),
+  ],
   test: {
     name: "@base-ripple/react",
     watch: false,

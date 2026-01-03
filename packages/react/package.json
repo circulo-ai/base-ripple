@@ -1,6 +1,23 @@
 {
   "name": "@base-ripple/react",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "homepage": "https://base-ripple.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/circulo-ai/base-ripple"
+  },
+  "keywords": [
+    "ripple",
+    "ripple-effect",
+    "interaction",
+    "feedback",
+    "ui",
+    "css",
+    "accessibility",
+    "typescript",
+    "react",
+    "react-component"
+  ],
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -13,20 +30,18 @@
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
-    "./styles.css": {
-      "@base-ripple/source": "./src/styles.css",
-      "default": "./src/styles.css"
-    }
+    "./styles.css": "./src/styles.css"
   },
   "sideEffects": [
     "./src/styles.css"
   ],
   "files": [
+    "src/styles.css",
     "dist",
     "!**/*.tsbuildinfo"
   ],
   "dependencies": {
-    "@base-ripple/core": "0.0.1",
+    "@base-ripple/core": "1.0.0",
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
@@ -36,5 +51,8 @@
     "tags": [
       "scope:react"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

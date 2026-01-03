@@ -1,6 +1,23 @@
 {
   "name": "@base-ripple/core",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "homepage": "https://base-ripple.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/circulo-ai/base-ripple"
+  },
+  "keywords": [
+    "ripple",
+    "ripple-effect",
+    "interaction",
+    "feedback",
+    "ui",
+    "css",
+    "dom",
+    "accessibility",
+    "typescript",
+    "vanilla-js"
+  ],
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -32,5 +49,8 @@
     "tags": [
       "scope:core"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
