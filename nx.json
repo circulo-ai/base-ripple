@@ -60,5 +60,6 @@
   },
   "generators": {
     "@nx/next": { "application": { "style": "tailwind", "linter": "eslint" } }
-  }
+  },
+  "nxCloudId": "69566ad8056e388750a39ac3"
 }
