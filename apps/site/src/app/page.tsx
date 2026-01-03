@@ -64,7 +64,7 @@ export default function Home() {
       <BaseRippleExample
         title="Color Pop"
         description="Bold red ink for contrast while keeping the same behavior."
-        className="[&>.base-ripple]:bg-blue-500/50"
+        className="[&>.base-ripple]:[background-color:rgba(59,130,246,.5)]"
       />
       <BaseRippleExample>
         <BaseRippleExample
@@ -77,7 +77,7 @@ export default function Home() {
       <BaseRippleExample
         title="Light Mode"
         description="Light surface with darker ripple for a softer contrast."
-        className="bg-gray-500 [&>.base-ripple]:bg-black/15"
+        className="bg-gray-500 [&>.base-ripple]:[background-color:rgba(0,0,0,.15)]"
       />
       <BaseRippleExample
         title="View Source"
