@@ -31,13 +31,13 @@ export default function Home() {
       <BaseRippleExample
         title="Soft Blur"
         description="Heavy blur plus extra size to keep the glow from clipping."
-        className="[&_>_.base-ripple]:blur-3xl"
+        className="[&>.base-ripple]:blur-3xl"
         rippleOptions={{ sizeOffset: 64 * 5 }}
       />
       <BaseRippleExample
         title="Center Blur"
         description="Center origin with a blurred ripple that expands smoothly."
-        className="[&_>_.base-ripple]:blur-3xl"
+        className="[&>.base-ripple]:blur-3xl"
         rippleOptions={{ origin: "center" }}
       />
       <BaseRippleExample
@@ -48,23 +48,23 @@ export default function Home() {
       <BaseRippleExample
         title="Slow Trail"
         description="Longer duration and custom data attributes on each span."
-        className="[&_>_.base-ripple]:[animation-duration:2s] [&_>_.base-ripple]:[transition-duration:2s]"
+        className="[&>.base-ripple]:[animation-duration:2s] [&>.base-ripple]:[transition-duration:2s]"
         rippleOptions={{ attributes: { "data-custom": "base-ripple" } }}
       />
       <BaseRippleExample
         title="Sharp Timing"
         description="Custom cubic-bezier easing makes the ripple feel snappier."
-        className="[&_>_.base-ripple]:[animation-timing-function:cubic-bezier(0,1,1,0)] [&_>_.base-ripple]:[transition-timing-function:cubic-bezier(0,1,1,0)]"
+        className="[&>.base-ripple]:[animation-timing-function:cubic-bezier(0,1,1,0)] [&>.base-ripple]:[transition-timing-function:cubic-bezier(0,1,1,0)]"
       />
       <BaseRippleExample
         title="Square Ripple"
         description="No border radius gives a crisp, squared ripple edge."
-        className="[&_>_.base-ripple]:rounded-none"
+        className="[&>.base-ripple]:rounded-none"
       />
       <BaseRippleExample
         title="Color Pop"
         description="Bold red ink for contrast while keeping the same behavior."
-        className="[&_>_.base-ripple]:bg-blue-500 [&_>_.base-ripple]:bg-opacity-50"
+        className="[&>.base-ripple]:bg-blue-500/50"
       />
       <BaseRippleExample>
         <BaseRippleExample
@@ -77,7 +77,7 @@ export default function Home() {
       <BaseRippleExample
         title="Light Mode"
         description="Light surface with darker ripple for a softer contrast."
-        className="bg-gray-500 [&_>_.base-ripple]:bg-black [&_>_.base-ripple]:bg-opacity-15"
+        className="bg-gray-500 [&>.base-ripple]:bg-black/15"
       />
       <BaseRippleExample
         title="View Source"
@@ -103,7 +103,7 @@ function BaseRippleExample({
   return (
     <BaseRipple
       className={
-        "base-ripple-container flex flex-col items-center justify-center bg-black p-3 text-white [&_>_.base-ripple]:bg-white/15 " +
+        "base-ripple-container flex flex-col items-center justify-center bg-black p-3 text-white [&>.base-ripple]:bg-white/15 " +
         className
       }
       {...restProps}
