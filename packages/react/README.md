@@ -8,20 +8,15 @@ Demo: <https://base-ripple.vercel.app/>
 ## Install
 
 ```bash
-npm i @base-ripple/react @base-ripple/core
+npm i @base-ripple/react
 ```
-
-Note: `@base-ripple/react` depends on `@base-ripple/core`, but if you import
-`@base-ripple/core/styles.css` directly you should list `@base-ripple/core` as a
-direct dependency to avoid transitive resolution issues in some package
-managers.
 
 ## Quick start (React)
 
 ```tsx
 "use client";
 
-import "@base-ripple/core/styles.css";
+import "@base-ripple/react/styles.css";
 import { BaseRipple } from "@base-ripple/react";
 
 export function Example() {
@@ -45,17 +40,17 @@ The ripple uses two class names:
 - `.base-ripple-container` on the target element
 - `.base-ripple` on the injected `<span>`
 
-Option A: Import the core default styles (recommended)
+Option A: Import the default styles (recommended)
 
 ```css
-@import "@base-ripple/core/styles.css";
+@import "@base-ripple/react/styles.css";
 ```
 
 Option B: Provide your own styles (advanced)
 
-If you do not import the core styles, create your own CSS using the same class
+If you do not import `styles.css`, create your own CSS using the same class
 names. Make sure the container is positioned and clips overflow. Here is the
-default stylesheet you can copy and customize:
+default `styles.css` you can copy and customize:
 
 ```css
 .base-ripple-container {
@@ -110,7 +105,6 @@ transition, set a `transition` with 0 duration, for example:
 ## API
 
 ```tsx
-import type { AttachBaseRippleOptions } from "@base-ripple/core";
 import { BaseRipple } from "@base-ripple/react";
 
 <BaseRipple
