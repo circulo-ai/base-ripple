@@ -1,3 +1,5 @@
-import { describe } from "vitest";
+import { describe, it } from "vitest";
 
-describe("base-ripple/react", () => {});
+describe("base-ripple/react", () => {
+  it("passes", () => {});
+});
