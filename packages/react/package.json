@@ -1,6 +1,6 @@
 {
   "name": "@base-ripple/react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://base-ripple.vercel.app/",
   "repository": {
     "type": "git",
@@ -41,7 +41,7 @@
     "!**/*.tsbuildinfo"
   ],
   "dependencies": {
-    "@base-ripple/core": "1.0.0",
+    "@base-ripple/core": "1.0.1",
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
