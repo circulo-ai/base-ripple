@@ -12,8 +12,15 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "default": "./dist/index.js"
+    },
+    "./styles.css": {
+      "@base-ripple/source": "./src/styles.css",
+      "default": "./src/styles.css"
     }
   },
+  "sideEffects": [
+    "./src/styles.css"
+  ],
   "files": [
     "dist",
     "!**/*.tsbuildinfo"
