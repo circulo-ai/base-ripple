@@ -64,7 +64,7 @@ export default function Home() {
       <BaseRippleExample
         title="Color Pop"
         description="Bold red ink for contrast while keeping the same behavior."
-        className="[&_>_.base-ripple]:bg-blue-500/50"
+        className="[&_>_.base-ripple]:bg-blue-500 [&_>_.base-ripple]:bg-opacity-50"
       />
       <BaseRippleExample>
         <BaseRippleExample
@@ -77,11 +77,11 @@ export default function Home() {
       <BaseRippleExample
         title="Light Mode"
         description="Light surface with darker ripple for a softer contrast."
-        className="bg-gray-500 [&_>_.base-ripple]:bg-black/15"
+        className="bg-gray-500 [&_>_.base-ripple]:bg-black [&_>_.base-ripple]:bg-opacity-15"
       />
       <BaseRippleExample
         title="View Source"
-        description="This one gets rendered as an anchor element and links to the demo page code in GitHub."
+        description="This one gets rendered as an anchor element and is linked to the demo page code in GitHub."
         as="a"
         href="https://github.com/circulo-ai/base-ripple/blob/main/apps/site/src/app/page.tsx"
         target="_blank"
