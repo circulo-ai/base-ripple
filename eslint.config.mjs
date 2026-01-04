@@ -8,8 +8,7 @@ export default [
     ignores: [
       "**/dist",
       "**/build",
-      "**/out-tsc",
-      "**/*.d.ts.map",
+      "**/out-tsc/vitest/**",
       "**/vite.config.*.timestamp*",
       "**/vitest.config.*.timestamp*",
     ],
