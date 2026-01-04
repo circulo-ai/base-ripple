@@ -1,6 +1,7 @@
 {
   "name": "@base-ripple/core",
   "version": "1.0.2",
+  "license": "MIT",
   "homepage": "https://base-ripple.vercel.app/",
   "repository": {
     "type": "git",
