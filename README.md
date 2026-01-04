@@ -20,8 +20,8 @@ Demo: <https://base-ripple.vercel.app/>
 
 Install, usage, API, and styling details live in the package docs:
 
-- Core package docs: `packages/core/README.md`
-- React package docs: `packages/react/README.md`
+- Core package docs: [`packages/core/README.md`](https://github.com/circulo-ai/base-ripple/blob/main/packages/core/README.md)
+- React package docs: [`packages/react/README.md`](https://github.com/circulo-ai/base-ripple/blob/main/packages/react/README.md)
 
 ## Packages
 
