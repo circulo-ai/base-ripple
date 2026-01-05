@@ -1,6 +1,6 @@
 {
   "name": "@base-ripple/react",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "homepage": "https://base-ripple.vercel.app/",
   "repository": {
@@ -42,7 +42,7 @@
     "!**/*.tsbuildinfo"
   ],
   "dependencies": {
-    "@base-ripple/core": "1.0.2"
+    "@base-ripple/core": "1.0.3"
   },
   "peerDependencies": {
     "react": ">=16.8 <20"
