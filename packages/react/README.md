@@ -60,7 +60,7 @@ names. Here is the default `styles.css` you can copy and customize:
   transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform, opacity;
 
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2); /* fallback */
   background-color: color-mix(in srgb, currentColor 20%, transparent);
 }
 

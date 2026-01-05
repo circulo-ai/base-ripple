@@ -102,10 +102,10 @@ function BaseRippleExample({
 } & ComponentProps<typeof BaseRipple>) {
   return (
     <BaseRipple
-      className={
-        "base-ripple-container flex flex-col items-center justify-center bg-black p-3 text-white [&>.base-ripple]:bg-white/15 " +
+      className={(
+        "flex select-none flex-col items-center justify-center bg-black p-3 text-white [&>.base-ripple]:bg-white/15 " +
         className
-      }
+      ).trim()}
       {...restProps}
     >
       {title && (
