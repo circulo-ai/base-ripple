@@ -53,21 +53,10 @@ Option A: Import the default styles (recommended)
 @import "@base-ripple/core/styles.css";
 ```
 
-The default stylesheet handles layout and animation. You still need to set a
-fill color and opacity, for example:
-
-```css
-.base-ripple {
-  background: currentColor;
-  opacity: 0.12;
-}
-```
-
 Option B: Provide your own styles (advanced)
 
 If you do not import `styles.css`, create your own CSS using the same class
-names. Make sure the container is positioned and clips overflow. Here is the
-default `styles.css` you can copy and customize:
+names. Here is the default `styles.css` you can copy and customize:
 
 ```css
 .base-ripple-container {
@@ -86,6 +75,9 @@ default `styles.css` you can copy and customize:
   animation: baseRipple 600ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
   transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform, opacity;
+
+  background-color: rgba(255, 255, 255, 0.2);
+  background-color: color-mix(in srgb, currentColor 20%, transparent);
 }
 
 @keyframes baseRipple {
@@ -111,11 +103,11 @@ default `styles.css` you can copy and customize:
 IMPORTANT: If you write your own `.base-ripple` styles, it MUST include a
 `transition` for `opacity`. Cleanup relies on the `transitionend` event for
 `opacity`. Without it, ripple elements never remove themselves. If you want no
-transition, set a `transition` with 0 duration, for example:
+transition, set a `transition` with 1ms duration, for example:
 
 ```css
 .base-ripple {
-  transition: opacity 0ms linear;
+  transition: opacity 1ms linear;
 }
 ```
 
@@ -132,11 +124,11 @@ attachBaseRipple(
 
 ### Options
 
-| Prop         | Type                     | Default     | Description                                                                                            |
-| ------------ | ------------------------ | ----------- | ------------------------------------------------------------------------------------------------------ |
-| `origin`     | `"pointer" \| "center"`  | `pointer`   | Where the ripple starts. `pointer` uses the pointer position; `center` starts from the element center. |
-| `sizeOffset` | `number`                 | `0`         | Extra pixels added to the ripple diameter, useful when adding blur or glow.                            |
-| `attributes` | `Record<string, string>` | `undefined` | Extra attributes added to each ripple `<span>`.                                                        |
+| Prop         | Type                     | Default     | Description                                                                                           |
+| ------------ | ------------------------ | ----------- | ----------------------------------------------------------------------------------------------------- |
+| `origin`     | `"pointer" \| "center"`  | `pointer`   | Where the ripple ends. `pointer` uses the pointer down position; `center` ends at the element center. |
+| `sizeOffset` | `number`                 | `0`         | Extra pixels added to the ripple diameter (can be negative), useful when adding blur or glow.         |
+| `attributes` | `Record<string, string>` | `undefined` | Extra attributes added to each ripple `<span>`.                                                       |
 
 ## Behavior notes
 

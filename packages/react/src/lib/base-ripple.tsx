@@ -47,6 +47,7 @@ function Ripple(
   {
     rippleOptions = DEFAULT_RIPPLE_OPTIONS,
     as: Component = "button",
+    className,
     ...restProps
   }: PolymorphicComponentProps<ElementType, RippleProps>,
   ref: ForwardedRef<unknown>,
@@ -59,7 +60,13 @@ function Ripple(
     return attachBaseRipple(localRef.current, rippleOptions);
   }, [serializeOptions(rippleOptions)]);
 
-  return <Component ref={mergedRef} {...restProps} />;
+  return (
+    <Component
+      ref={mergedRef}
+      className={("base-ripple-container " + className).trim()}
+      {...restProps}
+    />
+  );
 }
 
 export const BaseRipple = forwardRef(Ripple) as RippleComponent;

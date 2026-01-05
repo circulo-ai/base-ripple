@@ -11,25 +11,16 @@ Demo: <https://base-ripple.vercel.app/>
 npm i @base-ripple/react
 ```
 
+You don't need to install `@base-ripple/core`.
+
 ## Quick start (React)
 
 ```tsx
-"use client";
-
 import "@base-ripple/react/styles.css";
 import { BaseRipple } from "@base-ripple/react";
 
 export function Example() {
-  return <BaseRipple className="base-ripple-container">Click me</BaseRipple>;
-}
-```
-
-You still need to define a fill color and opacity for the ripple:
-
-```css
-.base-ripple {
-  background: currentColor;
-  opacity: 0.12;
+  return <BaseRipple>Click me</BaseRipple>;
 }
 ```
 
@@ -49,8 +40,7 @@ Option A: Import the default styles (recommended)
 Option B: Provide your own styles (advanced)
 
 If you do not import `styles.css`, create your own CSS using the same class
-names. Make sure the container is positioned and clips overflow. Here is the
-default `styles.css` you can copy and customize:
+names. Here is the default `styles.css` you can copy and customize:
 
 ```css
 .base-ripple-container {
@@ -69,6 +59,9 @@ default `styles.css` you can copy and customize:
   animation: baseRipple 600ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
   transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform, opacity;
+
+  background-color: rgba(255, 255, 255, 0.2);
+  background-color: color-mix(in srgb, currentColor 20%, transparent);
 }
 
 @keyframes baseRipple {
@@ -94,11 +87,11 @@ default `styles.css` you can copy and customize:
 IMPORTANT: If you write your own `.base-ripple` styles, it MUST include a
 `transition` for `opacity`. Cleanup relies on the `transitionend` event for
 `opacity`. Without it, ripple elements never remove themselves. If you want no
-transition, set a `transition` with 0 duration, for example:
+transition, set a `transition` with 1ms duration, for example:
 
 ```css
 .base-ripple {
-  transition: opacity 0ms linear;
+  transition: opacity 1ms linear;
 }
 ```
 
@@ -107,11 +100,7 @@ transition, set a `transition` with 0 duration, for example:
 ```tsx
 import { BaseRipple } from "@base-ripple/react";
 
-<BaseRipple
-  as="button"
-  className="base-ripple-container"
-  rippleOptions={{ origin: "pointer", sizeOffset: 96 }}
->
+<BaseRipple as="button" rippleOptions={{ origin: "pointer", sizeOffset: 96 }}>
   Click me
 </BaseRipple>;
 ```
@@ -128,11 +117,11 @@ forwarded to the rendered element.
 
 ### `rippleOptions`
 
-| Prop         | Type                     | Default     | Description                                                                                            |
-| ------------ | ------------------------ | ----------- | ------------------------------------------------------------------------------------------------------ |
-| `origin`     | `"pointer" \| "center"`  | `pointer`   | Where the ripple starts. `pointer` uses the pointer position; `center` starts from the element center. |
-| `sizeOffset` | `number`                 | `0`         | Extra pixels added to the ripple diameter, useful when adding blur or glow.                            |
-| `attributes` | `Record<string, string>` | `undefined` | Extra attributes added to each ripple `<span>`.                                                        |
+| Prop         | Type                     | Default     | Description                                                                                           |
+| ------------ | ------------------------ | ----------- | ----------------------------------------------------------------------------------------------------- |
+| `origin`     | `"pointer" \| "center"`  | `pointer`   | Where the ripple ends. `pointer` uses the pointer down position; `center` ends at the element center. |
+| `sizeOffset` | `number`                 | `0`         | Extra pixels added to the ripple diameter (can be negative), useful when adding blur or glow.         |
+| `attributes` | `Record<string, string>` | `undefined` | Extra attributes added to each ripple `<span>`.                                                       |
 
 ## Behavior notes
 
