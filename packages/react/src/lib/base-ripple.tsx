@@ -42,6 +42,7 @@ type RippleComponent = <E extends ElementType = "button">(
 // region MAIN
 
 const DEFAULT_RIPPLE_OPTIONS: AttachBaseRippleOptions = {};
+const RIPPLE_CONTAINER_CLASS = "base-ripple-container";
 
 function Ripple(
   {
@@ -63,13 +64,44 @@ function Ripple(
   return (
     <Component
       ref={mergedRef}
-      className={("base-ripple-container " + className).trim()}
+      className={mergeClassName(className)}
       {...restProps}
     />
   );
 }
 
 export const BaseRipple = forwardRef(Ripple) as RippleComponent;
+
+function mergeClassName<ClassName>(
+  className: ClassName,
+): MergedClassName<ClassName> {
+  if (typeof className === "function") {
+    return ((...args: unknown[]) =>
+      joinClassNames(
+        RIPPLE_CONTAINER_CLASS,
+        Reflect.apply(className, undefined, args),
+      )) as MergedClassName<ClassName>;
+  }
+
+  return joinClassNames(
+    RIPPLE_CONTAINER_CLASS,
+    className,
+  ) as MergedClassName<ClassName>;
+}
+
+type MergedClassName<ClassName> = ClassName extends (
+  ...args: infer Args
+) => unknown
+  ? (...args: Args) => string
+  : string;
+
+function joinClassNames(...classNames: unknown[]) {
+  return classNames
+    .filter((className): className is string => typeof className === "string")
+    .map((className) => className.trim())
+    .filter(Boolean)
+    .join(" ");
+}
 
 // endregion MAIN
 // region USE MERGED REFS
