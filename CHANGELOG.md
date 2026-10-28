@@ -1,3 +1,18 @@
+## 1.0.4 (2026-10-28)
+
+### 🚀 Features
+
+- add BaseRipple component tests and improve className handling ([db9fa0d](https://github.com/circulo-ai/base-ripple/commit/db9fa0d))
+
+### 🩹 Fixes
+
+- update formatting in CHANGELOG.md for consistency ([ebfada5](https://github.com/circulo-ai/base-ripple/commit/ebfada5))
+- update background color in styles for clarity and fallback support ([cdb40b3](https://github.com/circulo-ai/base-ripple/commit/cdb40b3))
+
+### ❤️ Thank You
+
+- Arshaan
+
 ## 1.0.3 (2026-01-05)
 
 ### 🩹 Fixes
