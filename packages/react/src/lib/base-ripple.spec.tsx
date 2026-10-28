@@ -69,7 +69,9 @@ async function expectMarkupAndHydration(
   container.innerHTML = serverMarkup;
   document.body.append(container);
 
-  const consoleError = vi.spyOn(console, "error").mockImplementation(() => {});
+  const consoleError = vi
+    .spyOn(console, "error")
+    .mockImplementation(() => undefined);
   let root: Root | undefined;
 
   try {
