@@ -49,6 +49,7 @@ function Ripple(
     rippleOptions = DEFAULT_RIPPLE_OPTIONS,
     as: Component = "button",
     className,
+    children,
     ...restProps
   }: PolymorphicComponentProps<ElementType, RippleProps>,
   ref: ForwardedRef<unknown>,
@@ -61,12 +62,23 @@ function Ripple(
     return attachBaseRipple(localRef.current, rippleOptions);
   }, [serializeOptions(rippleOptions)]);
 
+  // Keep text as a reconciled child node so React doesn't clear imperative
+  // ripple spans when the text changes.
+  const stableChildren =
+    typeof children === "string" || typeof children === "number" ? (
+      <>{children}</>
+    ) : (
+      children
+    );
+
   return (
     <Component
       ref={mergedRef}
       className={mergeClassName(className)}
       {...restProps}
-    />
+    >
+      {stableChildren}
+    </Component>
   );
 }
 
