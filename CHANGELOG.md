@@ -1,3 +1,18 @@
+## 1.0.5 (2026-10-30)
+
+### 🚀 Features
+
+- enhance Ripple component to preserve text nodes during updates ([d342f48](https://github.com/circulo-ai/base-ripple/commit/d342f48))
+
+### 🩹 Fixes
+
+- update package versions to 1.0.4 in bun.lock ([c6bf21c](https://github.com/circulo-ai/base-ripple/commit/c6bf21c))
+- update console error mock implementation for clarity ([f99b3ce](https://github.com/circulo-ai/base-ripple/commit/f99b3ce))
+
+### ❤️ Thank You
+
+- Arshaan @arshaan-abh
+
 ## 1.0.4 (2026-10-28)
 
 ### 🚀 Features
